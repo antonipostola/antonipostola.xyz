@@ -9,12 +9,12 @@ body {
 	margin: auto;
 	padding: 0;
 
-	color: #eeeeff;
+	color: #ffeedd;
 
 	font-size: 20px;
 	font-family: Georgia, serif;
 
-	background-color: #111144;
+	background-color: #281544;
 }
 
 main {
@@ -22,18 +22,18 @@ main {
 }
 
 a {
-	color: #ee66bb;
+	color: #ee6688;
 }
 
 h1 {
 	text-align: center;
 	font-size: 45px;
 
-	color: #dd6666;
+	color: #ff7766;
 }
 
 h2 {
-	color: #ddaaaa;
+	color: #e5b388;
 	padding-top: 25px;
 }
 
