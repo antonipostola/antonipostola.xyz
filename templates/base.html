@@ -1,19 +1,21 @@
 <head>
-	<meta charset="utf-8">
 	<title LanguageSite="en"><CustomTemplateVar name="title_en"/></title>
 	<title LanguageSite="pl"><CustomTemplateVar name="title_pl"/></title>
+
+	<link rel="stylesheet" href="/resource/style/base.css"/>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<h1>
-		<span LanguageSite="en">
-			<CustomTemplateVar name="title_en"/>
-		</span>
+	<h1 LanguageSite="en"><CustomTemplateVar name="title_en"/></h1>
+	<h1 LanguageSite="pl"><CustomTemplateVar name="title_pl"/></h1>
 
-		<span LanguageSite="pl">
-			<CustomTemplateVar name="title_pl"/>
-		</span>
+	<div class="language_options">
+		<a href="/$PATH[en]$"><strong>EN</strong></a><a href="/$PATH[pl]$"><strong>PL</strong></a>
+	</div>
 
-		<a href="/$PATH[en]$">EN</a>
-		<a href="/$PATH[pl]$">PL</a>
-	</h1>
+	<main>
+		<CustomTemplateBody/>
+	</main>
 </body>

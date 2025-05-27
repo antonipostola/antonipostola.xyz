@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 8px;
+}
+
+body {
+	max-width: 1000px;
+
+	margin: auto;
+	padding: 0;
+
+	color: #eeeeff;
+
+	font-size: 20px;
+	font-family: Georgia, serif;
+
+	background-color: #111144;
+}
+
+main {
+	padding: 16px;
+}
+
+a {
+	color: #ee66bb;
+}
+
+h1 {
+	text-align: center;
+	font-size: 45px;
+
+	color: #dd6666;
+}
+
+h2 {
+	color: #ddaaaa;
+	padding-top: 25px;
+}
+
+img {
+	display: block;
+	margin: auto;
+}
+
+
+.language_options {
+	text-align: center;
+}
+.language_options a {
+	text-decoration: none;
+	font-size: 25px
+}
