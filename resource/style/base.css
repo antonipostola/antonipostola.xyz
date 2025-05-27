@@ -23,6 +23,9 @@ main {
 a {
 	color: #ee8888;
 }
+a:hover {
+	color: #ffaa66;
+}
 
 h1 {
 	text-align: center;
