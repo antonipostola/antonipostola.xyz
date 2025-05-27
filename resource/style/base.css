@@ -40,6 +40,8 @@ h2 {
 img {
 	display: block;
 	margin: auto;
+
+	max-width: 80%;
 }
 
 
