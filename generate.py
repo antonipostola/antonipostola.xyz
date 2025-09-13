@@ -27,7 +27,11 @@ LANGUAGE_SITE_NAMES: dict[str, dict[str, str]] = {
     "example": {
         "en": "example",
         "pl": "przykład",
-    }
+    },
+    "music": {
+        "en": "music",
+        "pl": "muzyka",
+    },
 }
 
 def get_language_site_name(base_site_name: str, lang: str):
@@ -132,7 +136,7 @@ def expand_template( template_html_location: str, template_body: list[PageElemen
 
 
 
-    # subsitute the template variables
+    # substitute the template variables
 
     for template_var_tag in soup.find_all("customtemplatevar"):
         assert isinstance(template_var_tag, Tag)
@@ -153,9 +157,37 @@ def expand_template( template_html_location: str, template_body: list[PageElemen
 
 
 
+    # substitute the variable titles
+
+    for var_title_tag in soup.find_all("vartitle"):
+        assert isinstance(var_title_tag, Tag)
+
+        if template_body != None:
+
+            var_name = str(var_title_tag.get("name"))
+
+            if var_name == "None":
+                fail(f"({template_html_location}): 'VarTitle' tags must have a 'name' attribute.")
+
+            elif var_name not in template_vars:
+                fail(f"({template_html_location}): VarTitle's variable: '{var_name}' was not set.")
+            else:
+                title_tag = soup.new_tag("title")
+                title_tag.attrs = var_title_tag.attrs.copy()
+                del title_tag["name"]
+                title_tag.string = template_vars[var_name]
+
+                _ = var_title_tag.insert_before(title_tag)
+
+            var_title_tag.decompose()
+
+
+
     # expand other templates if present in this one
 
-    for template_tag in soup.find_all("customtemplate"):
+    nested_templates = sorted(soup.find_all("customtemplate"), key=lambda tag: len(list(tag.parents)), reverse=True)
+
+    for template_tag in nested_templates:
         assert isinstance(template_tag, Tag)
 
         other_template_loc = str(template_tag.get("location"))
@@ -300,7 +332,9 @@ def generate_html(raw_html_location: str):
 
     # expand the templates present
 
-    for template_tag in soup.find_all("customtemplate"):
+    templates = sorted(soup.find_all("customtemplate"), key=lambda tag: len(list(tag.parents)), reverse=True)
+
+    for template_tag in templates:
         assert isinstance(template_tag, Tag)
 
         template_loc = str(template_tag.get("location"))

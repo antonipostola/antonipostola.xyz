@@ -9,8 +9,8 @@ body {
 	margin: auto;
 	padding: 0;
 
-	color: #ffeedd;
-	background-color: #22222e;
+	color: #ffeecc;
+	background-color: #332222;
 
 	font-size: 20px;
 	font-family: Georgia, serif;
@@ -21,22 +21,25 @@ main {
 }
 
 a {
-	color: #ee8888;
+	text-decoration: none;
+	color: #ff7799;
 }
 a:hover {
-	color: #ffaa66;
+	color: #ff5577;
 }
 
 h1 {
+	text-decoration: underline;
 	text-align: center;
 	font-size: 45px;
 
-	color: #ff6666;
+	color: #ffaa66;
 }
 
 h2 {
-	color: #e5b388;
-	padding-top: 25px;
+	text-decoration: underline;
+	color: #66aa66;
+	padding-top: 20px;
 }
 
 img {
@@ -46,6 +49,19 @@ img {
 	max-width: 80%;
 }
 
+.top_link {
+	text-decoration: none;
+	padding: 0;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+}
+
+.big_link {
+	font-size: 30px;
+}
 
 .language_options {
 	text-align: center;
@@ -53,4 +69,8 @@ img {
 .language_options a {
 	text-decoration: none;
 	font-size: 25px
+}
+
+audio {
+	width: 100%;
 }

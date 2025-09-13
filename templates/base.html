@@ -1,6 +1,6 @@
 <head>
-	<title LanguageSite="en"><CustomTemplateVar name="title_en"/></title>
-	<title LanguageSite="pl"><CustomTemplateVar name="title_pl"/></title>
+	<VarTitle LanguageSite="en" name="title_en"/></VarTitle>
+	<VarTitle LanguageSite="pl" name="title_pl"/></VarTitle>
 
 	<link rel="stylesheet" href="/resource/style/base.css"/>
 
@@ -8,8 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<h1 LanguageSite="en"><CustomTemplateVar name="title_en"/></h1>
-	<h1 LanguageSite="pl"><CustomTemplateVar name="title_pl"/></h1>
+	<a class="top_link" href="/$LANG$">
+		<h1 LanguageSite="en"><CustomTemplateVar name="title_en"/></h1>
+		<h1 LanguageSite="pl"><CustomTemplateVar name="title_pl"/></h1>
+	</a>
 
 	<div class="language_options">
 		<a href="/$PATH[en]$"><strong>EN</strong></a><a href="/$PATH[pl]$"><strong>PL</strong></a>
@@ -18,4 +20,6 @@
 	<main>
 		<CustomTemplateBody/>
 	</main>
+
+	<footer><a href="/$LANG$">https://antonipostola.xyz</a><footer>
 </body>
