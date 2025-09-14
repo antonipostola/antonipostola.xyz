@@ -32,6 +32,10 @@ LANGUAGE_SITE_NAMES: dict[str, dict[str, str]] = {
         "en": "music",
         "pl": "muzyka",
     },
+    "articles": {
+        "en": "articles",
+        "pl": "artykuły",
+    },
 }
 
 def get_language_site_name(base_site_name: str, lang: str):
